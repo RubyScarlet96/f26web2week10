@@ -1,0 +1,168 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain) */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+/* clear fix only applied when working with floats */
+
+blockquote::before, blockquote::after,
+q::before, q::after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* <weight>: Use a value from 100 to 900 */
+/* <uniquifier>: Use a unique and descriptive class name */
+/* 
+.advent-pro-<uniquifier> {
+  font-family: "Advent Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
+
+img{
+    max-width: 100%;
+}
+.var{
+    font-family: "Advent Pro", sans-serif;
+}
+
+.var h2{
+    font-size: 42px;
+    font-weight: 100;
+    font-variation-settings: "wdth" 100;
+    transition: all 3s;
+}
+
+.var h2:hover{
+    font-weight:900;
+    font-variation-settings: "wdth" 200;
+}
+
+.var p{
+    font-weight:350;
+}
+
+/* ***************************** 
+            TEXT WRAP
+    ****************************/
+.wrap p{
+    margin-bottom: 1em;
+}
+.wrap p:nth-of-type(1){
+    text-wrap: balance;
+}
+
+/* use this sparingly as its computationally heavy */
+
+.wrap p:nth-of-type(2){
+    text-wrap: pretty;
+}
+/* prevents orphans (single words from being left alone on a line) */
+
+.wrap p:nth-of-type(3){
+    text-wrap: stable;
+}
+
+/* supposidly keeps editable text from rebalancing too much  */
+
+/* *****************************
+           CLAMP TEXT
+           ********************** */
+
+.clp h2{
+ font-size: 6vw;
+ }
+
+ .clp h3{
+    font-size: clamp(32px, 6vw, 64px);
+    /* clamp needs three values:
+      the minimum size
+      the responsive size (the size it will be as long as it is between the minimum and maximum size)
+      the maximum size */
+ }
+
+/* *****************************
+        TEXT BOX
+        ************************ */
+
+.textbox article{
+    border-top: 1px solid red;
+    margin-bottom: 1em;
+}
+
+.textbox img{
+    float: left;
+}
+
+.textbox h2{
+    font-family: "Advent Pro", sans-serif;
+    font-size: 36px;
+    font-weight:550;
+    font-variation-settings: "wdth" 150;
+
+}
+
+.textbox article:nth-of-type(1) h2{
+    /* use textbox trim and textbox edge to remove default space around the font */
+
+    text-box-trim: trim-start;
+    text-box-edge:cap text;
+    /* text-box-edge requires two values for top and bottom the top can be:
+    cap, ex or text (default spacing)
+    cap is for top of capital letters and ex is fro top of lowercase letters, only use ex if the whole line is in lowercase 
+    the bottom can be:
+    alphabetic: trims to the baseline of the text
+    (cuts off descenders on g or y)
+    text:default spacing*/
+}
